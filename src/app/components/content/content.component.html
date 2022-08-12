@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="titulo"><h3>NOTAS</h3></div>
+    <div></div>
+    <table>
+        <caption class="titulo">Primer semestre 2022</caption>
+        <thead>
+          <tr>
+            <th scope="col">Asignatura</th>
+            <th scope="col">Certamen 1</th>
+            <th scope="col">Certamen 2</th>
+            <th scope="col">Certamen 3</th>
+            <th scope="col">Promedio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tabla of listaEstudiantes">
+            <td data-label="Asignatura">{{tabla.asignatura}}</td>
+            <td data-label="Certamen 1">{{tabla.primerCertamen}}</td>
+            <td data-label="Certamen 2">{{tabla.segundoCertamen}}</td>
+            <td data-label="Certamen 3">{{tabla.tercerCertamen}}</td>
+            <td data-label="Promedio">{{(tabla.primerCertamen+tabla.segundoCertamen+tabla.tercerCertamen)/3|reprobado}}</td>
+          </tr>
+
+
+         
+        </tbody>
+      </table>
+
+
+
+</div>

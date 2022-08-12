@@ -1,0 +1,19 @@
+.navbar{
+      margin: 1rem;
+      display: flex;
+}
+.logo{
+    top: 3rem;
+
+}
+.logo-titulo{
+    color: #f0f0f0;
+    font-family: 'Ledger', serif;
+}
+.navbar-logo{
+    margin-left: 2rem;
+    font-size: large;
+    margin-bottom: 0rem;
+    text-align: justify;
+    top: 50%;
+}

@@ -13,14 +13,15 @@
 .menu{
     grid-area: menu;
     background-color: #2a373d;
+    height: 30rem;
 }
 .content{
     grid-area: content;
-    background-color: #49403d;
+    background-color: #f0f0f0;
 }
 .footer{
     grid-area: footer;
-    background-color: #f0f0f0;
+    background-color: #49403d;
 }
 
 @media only screen and (max-width:650px){
@@ -39,9 +40,9 @@
     .container{
         display: grid;
         grid-template-areas: 
-        'navbar navbar navbar navbar'
-        'menu content content content'
-        'menu content content content'
-        'footer footer footer footer';
+        'navbar navbar navbar navbar navbar navbar navbar navbar'
+        'menu content content content content content content content'
+        'menu content content content content content content content'
+        'footer footer footer footer footer footer footer footer ';
     }
 }

@@ -1,30 +1,38 @@
 <div class="container">
-    <div class="titulo"><h3>NOTAS</h3></div>
-    <div></div>
-    <table>
-        <caption class="titulo">Primer semestre 2022</caption>
-        <thead>
-          <tr>
-            <th scope="col">Asignatura</th>
-            <th scope="col">Certamen 1</th>
-            <th scope="col">Certamen 2</th>
-            <th scope="col">Certamen 3</th>
-            <th scope="col">Promedio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let tabla of listaEstudiantes">
-            <td data-label="Asignatura">{{tabla.asignatura}}</td>
-            <td data-label="Certamen 1">{{tabla.primerCertamen}}</td>
-            <td data-label="Certamen 2">{{tabla.segundoCertamen}}</td>
-            <td data-label="Certamen 3">{{tabla.tercerCertamen}}</td>
-            <td data-label="Promedio">{{(tabla.primerCertamen+tabla.segundoCertamen+tabla.tercerCertamen)/3|reprobado}}</td>
-          </tr>
+   
+    <h2> Notas Primer Semestre 2022</h2>
 
+    <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 table">
 
-         
-        </tbody>
-      </table>
+   
+      <ng-container matColumnDef="asignatura">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Nombre Curso</th>
+        <td mat-cell *matCellDef="let element"> {{element.asignatura}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="primerCertamen">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef> Primer Parcial </th>
+        <td mat-cell *matCellDef="let element"> {{element.primerCertamen}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="segundoCertamen">
+        <th mat-header-cell *matHeaderCellDef> Segundo Parcial </th>
+        <td mat-cell *matCellDef="let element"> {{element.segundoCertamen}} </td>
+      </ng-container>
+      <ng-container matColumnDef="tercerCertamen">
+        <th mat-header-cell *matHeaderCellDef> Tercer Parcial </th>
+        <td mat-cell *matCellDef="let element"> {{element.tercerCertamen}} </td>
+      </ng-container>
+      <ng-container matColumnDef="resultado">
+        <th mat-header-cell *matHeaderCellDef> resultado </th>
+        <td mat-cell *matCellDef="let element"> - </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+      
+  
+    </table>
+
 
 
 

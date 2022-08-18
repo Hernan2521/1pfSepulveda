@@ -14,6 +14,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
+import { ListaComponent } from './components/lista/lista.component';
+
+import { MatSliderModule } from '@angular/material/slider';
+import { DatosAlumnoComponent } from './components/datos-alumno/datos-alumno.component';
+import { AppMaterialModule } from './app.material.module';
+import { EditarDialogComponent } from './components/editar-dialog/editar-dialog.component';
+import { FiltrarEditarPipe } from './components/lista/filtrar-editar.pipe';
+
 
 const appRoutes:Routes=[
   {path:'',component:InicioComponent},
@@ -30,7 +38,13 @@ const appRoutes:Routes=[
     ReprobadoPipe,
     FormularioComponent,
     InicioComponent,
-    FooterComponent
+    FooterComponent,
+    ListaComponent,
+    DatosAlumnoComponent,
+    EditarDialogComponent,
+    FiltrarEditarPipe,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +52,8 @@ const appRoutes:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

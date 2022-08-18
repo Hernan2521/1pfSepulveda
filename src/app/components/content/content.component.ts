@@ -1,4 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {MatTable, MatTableDataSource} from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import dataColegio from 'src/app/data.json'
+
+export interface Curso{
+  asignatura: number;
+  primerCertamen: number;
+  segundoCertamen: number;
+  tercerCertamen: number;
+  resultado:boolean;
+}
+
 
 @Component({
   selector: 'app-content',
@@ -6,14 +18,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+  columnas = ['asignatura','primerCertamen','segundoCertamen','tercerCertamen','resultado'];
+  dataSource:MatTableDataSource<any> = new MatTableDataSource(dataColegio.alumnos[0].notas);
 
-  listaEstudiantes: Array<any> =[
-    {asignatura:'Quimica',primerCertamen:2,segundoCertamen:2,tercerCertamen:3},
-    {asignatura:'Fisica',primerCertamen:5,segundoCertamen:3,tercerCertamen:7},
-    {asignatura:'Matematica',primerCertamen:4,segundoCertamen:3,tercerCertamen:8},
-    {asignatura:'Musica',primerCertamen:1,segundoCertamen:9,tercerCertamen:10},
-    {asignatura:'Lenguaje',primerCertamen:5,segundoCertamen:6,tercerCertamen:7},
-  ]
+
 
  //@Input() notas: Array<any> =[];
 

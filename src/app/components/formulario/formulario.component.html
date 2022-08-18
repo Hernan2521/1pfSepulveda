@@ -1,4 +1,5 @@
-<div class="container">
+<mat-card class="container">
+<div >
 <div class="form-style-2">
     <div class="form-style-2-heading">Solicitud de Tutoria</div>
 
@@ -10,8 +11,9 @@
 
     <label ><span>mensaje</span>
     <input class="textarea-field" formControlName="mensaje"></label>
-    <p *ngIf="formulario.get('mensaje')?.errors?.['required']" >Escribe un mensaje con la materia que necesitas reforzar</p>
+    <p *ngIf="formulario.get('mensaje')?.errors?.['required']" >Debes escribir un mensaje con la materia que necesitas reforzar</p>
     <label><span> </span><input type="submit" value="Enviar" /></label>
     </form>
     </div></div>
     
+</mat-card>

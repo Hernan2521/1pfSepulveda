@@ -1,8 +1,10 @@
 <div class="container">
-   
+
     <h2> Notas Primer Semestre 2022</h2>
 
-    <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 table">
+    <table mat-table
+    [dataSource]="dataSource$ | async" 
+     class="mat-elevation-z8 table">
 
    
       <ng-container matColumnDef="asignatura">
